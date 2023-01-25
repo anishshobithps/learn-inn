@@ -22,4 +22,5 @@ pnpm-debug.log*
 .DS_Store
 
 .yarn/cache
+install-state.gz
 
