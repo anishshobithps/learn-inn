@@ -1,0 +1,58 @@
+---
+import { SITE } from '~/config.mjs';
+import Layout from '~/layouts/PageLayout.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Features from "~/components/widgets/Features.astro";
+
+const meta = {
+  title: SITE.title,
+  description: SITE.description,
+  dontUseTitleTemplate: true,
+}
+---
+
+<Layout {meta}>
+  <Hero
+  callToAction={{ text: 'Get template', href: 'https://github.com/onwidget/astrowind', icon: 'tabler:download' }}
+  callToAction2={{ text: 'Learn more', href: '#features' }}
+  image={{ src: import('~/assets/images/hero.webp'), alt: 'Hero Image' }}
+  >
+  <Fragment slot="title">
+    <span class="text-accent dark:text-white highlight"> Elevating</span> your <span class="text-accent dark:text-white highlight"> knowledge <br></span>
+    beyond the walls of the <span class="text-accent dark:text-white highlight"> classroom.</span>
+  </Fragment>
+   </Hero>
+
+  <Features
+  highlight="Features"
+  title="What you get with Learn-Inn"
+  subtitle="Highlights on the features we offer"
+  items={[
+    [
+      {
+        title: 'Dynamic',
+        description: 'We are not done yet, this is just a begining.',
+        icon: 'tabler:brand-tailwind',
+      },
+      {
+        title: 'Quick Response',
+        description: 'We are always here for you.',
+        icon: 'tabler:components',
+      },
+    ],
+    [
+    {
+        title: 'Hub',
+        description:
+          'It\'s a hub for everything, it covers all ascpets of life not just education.',
+        icon: 'tabler:list-check',
+      },
+      {
+        title: 'Countless Resources',
+        description: 'A solution to everything.                            ',
+        icon: 'tabler:rocket',
+      },
+    ],
+  ]}
+  />
+</Layout>

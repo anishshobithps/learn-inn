@@ -4,7 +4,6 @@ import { fileURLToPath } from 'url';
 import { defineConfig } from 'astro/config';
 
 import tailwind from '@astrojs/tailwind';
-import sitemap from '@astrojs/sitemap';
 import image from '@astrojs/image';
 import mdx from '@astrojs/mdx';
 import compress from 'astro-compress';
@@ -27,7 +26,6 @@ export default defineConfig({
         applyBaseStyles: false,
       },
     }),
-    sitemap(),
     image({
       serviceEntryPoint: '@astrojs/image/sharp',
     }),
@@ -44,6 +42,9 @@ export default defineConfig({
   markdown: {},
 
   vite: {
+    ssr: {
+      external:  ['svgo']
+    },
     resolve: {
       alias: {
         '~': path.resolve(__dirname, './src'),
