@@ -1,0 +1,53 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Hero from '~/components/widgets/Hero2.astro';
+import Content from '~/components/widgets/Content.astro';
+
+const meta = {
+  title: "Depression",
+};
+---
+
+<Layout {meta}>
+  <Hero
+      image={{ src: import('~/assets/images/depression/depression.webp'), alt: 'Depression Image' }}>
+    <Fragment slot="title">
+      A journey to<span class="text-accent dark:text-white highlight"> healing.</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      <span class="hidden sm:inline">
+        <span class="text-accent dark:text-white highlight font-bold">Depression</span> is a mental health disorder that is characterized by feelings of sadness, hopelessness, and a lack of interest in things that you used to enjoy. It can also cause physical symptoms such as changes in appetite and sleep patterns, and emotional symptoms like low self-esteem and difficulty concentrating. It is a treatable condition and there are many forms of treatment available such as therapy, medication, or a combination of both. It's important to reach out for help if you or someone you know is struggling with <span class="text-accent dark:text-white highlight font-bold">depression.</span>
+        </span>
+    </Fragment>
+  </Hero>
+
+  <Content
+  isReversed
+  items={[
+    {
+      title: 'Reach out for help',
+      description:
+        'Talk to a therapist, counselor, or doctor about your feelings. They can help you develop a treatment plan that works for you.',
+    },
+    {
+      title: 'Set realistic goals',
+      description:
+        'Setting small, achievable goals can help you feel a sense of accomplishment and improve your self-esteem.',
+    },
+    {
+      title: 'Exercise',
+      description:
+        'Physical activity can help boost your mood and reduce symptoms of depression.',
+    },
+  ]}
+      image={{
+        src: import('~/assets/images/depression/coping.webp'),
+        alt: 'Colorful Image',
+      }}
+>
+  <Fragment slot="content">
+    <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">How to overcome it?</h3>
+  </Fragment>
+</Content>
+</Layout>

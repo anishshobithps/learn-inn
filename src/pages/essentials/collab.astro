@@ -1,0 +1,53 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Hero from '~/components/widgets/Hero2.astro';
+import Content from '~/components/widgets/Content.astro';
+
+const meta = {
+  title: "Collabration and Team Work",
+};
+---
+
+<Layout {meta}>
+  <Hero
+      image={{ src: import('~/assets/images/collab/image.webp'), alt: 'Anxiety Image' }}>
+    <Fragment slot="title">
+      <span class="text-accent dark:text-white highlight">Together </span> we achieve more.
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      <span class="hidden sm:inline">
+        <span class="text-accent dark:text-white highlight font-bold">Collaboration</span> and teamwork are the process of working together with others towards a common goal. It involves communication, cooperation, and coordination among team members. It allows individuals to pool their knowledge, skills and resources to achieve more than they could individually. It is essential for success in any field and leads to increased productivity, better decision-making and improved problem-solving. Additionally, it allows for personal and professional growth.
+        </span>
+    </Fragment>
+  </Hero>
+
+  <Content
+  isReversed
+  items={[
+    {
+      title: 'Clearly define goals and roles',
+      description:
+        'Make sure everyone understands their responsibilities and the overall objective.',
+    },
+    {
+      title: 'Encourage open communication',
+      description:
+        'Create an environment where team members feel comfortable sharing their ideas and thoughts.',
+    },
+    {
+      title: 'Foster trust and respect',
+      description:
+        'Trust and respect are the foundation of a strong team.',
+    },
+  ]}
+      image={{
+        src: import('~/assets/images/collab/collab.webp'),
+        alt: 'Colorful Image',
+      }}
+>
+  <Fragment slot="content">
+    <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">How to work on collabration?</h3>
+  </Fragment>
+</Content>
+</Layout>

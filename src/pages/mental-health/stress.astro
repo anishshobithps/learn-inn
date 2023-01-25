@@ -1,0 +1,53 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Hero from '~/components/widgets/Hero2.astro';
+import Content from '~/components/widgets/Content.astro';
+
+const meta = {
+  title: "Stress",
+};
+---
+
+<Layout {meta}>
+  <Hero
+      image={{ src: import('~/assets/images/anxiety/anxiety.webp'), alt: 'Anxiety Image' }}>
+    <Fragment slot="title">
+      <span class="text-accent dark:text-white highlight">Stress</span> less, live<span class="text-accent dark:text-white highlight"> more.</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      <span class="hidden sm:inline">
+        <span class="text-accent dark:text-white highlight font-bold">Stress</span> is a natural response to challenges or demands that can have negative effects on physical and mental health. It can manifest as physical and emotional symptoms, and if left unmanaged it can lead to health problems. There are various ways to manage and reduce stress, such as exercise, relaxation techniques, therapy and medication.
+        </span>
+    </Fragment>
+  </Hero>
+
+  <Content
+  isReversed
+  items={[
+    {
+      title: 'Recognize and acknowledge your anxiety',
+      description:
+        'Understand that feeling anxious is a normal human emotion and that it is not something to be ashamed of.',
+    },
+    {
+      title: 'Learn relaxation techniques',
+      description:
+        'Practice deep breathing, meditation, or yoga to help calm your mind and body.',
+    },
+    {
+      title: 'Get moving',
+      description:
+        'Regular physical exercise can help reduce feelings of anxiety and improve overall well-being.',
+    },
+  ]}
+      image={{
+        src: import('~/assets/images/anxiety/coping.webp'),
+        alt: 'Colorful Image',
+      }}
+>
+  <Fragment slot="content">
+    <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">How to overcome it?</h3>
+  </Fragment>
+</Content>
+</Layout>

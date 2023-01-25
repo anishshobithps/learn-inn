@@ -1,0 +1,53 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Hero from '~/components/widgets/Hero2.astro';
+import Content from '~/components/widgets/Content.astro';
+
+const meta = {
+  title: "Creative Thinking",
+};
+---
+
+<Layout {meta}>
+  <Hero
+      image={{ src: import('~/assets/images/creative/image.webp'), alt: 'Anxiety Image' }}>
+    <Fragment slot="title">
+      Unlock the power of your <span class="text-accent dark:text-white highlight font-bold">imagination.</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      <span class="hidden sm:inline">
+        <span class="text-accent dark:text-white highlight font-bold">Creative thinking</span> is the ability to think outside the box and come up with new and innovative ideas. It involves using imagination, curiosity, and divergent thinking to generate new perspectives and find unique solutions to problems. <span class="text-accent dark:text-white highlight font-bold">Creative thinking</span> is an essential skill that can be applied in various fields such as art, design, business, science, and technology. It allows individuals to think differently, be more adaptable, and come up with original ideas. It is a key component in problem-solving, decision-making, and innovation. By developing and applying creative thinking skills, people can find new ways to approach challenges and bring fresh perspectives to existing problems.
+        </span>
+    </Fragment>
+  </Hero>
+
+  <Content
+  isReversed
+  items={[
+    {
+      title: 'Keep an open mind',
+      description:
+        'Be open to new ideas and perspectives. Don’t dismiss an idea just because it seems unconventional.',
+    },
+    {
+      title: 'Ask questions',
+      description:
+        'Don’t be afraid to ask questions and challenge the status quo. It can help you see things from a different angle.',
+    },
+    {
+      title: 'Be curious',
+      description:
+        'Be curious about the world around you and seek new experiences. This can help you come up with new ideas and solutions.',
+    },
+  ]}
+      image={{
+        src: import('~/assets/images/creative/coping.webp'),
+        alt: 'Colorful Image',
+      }}
+>
+  <Fragment slot="content">
+    <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">How to enhance it?</h3>
+  </Fragment>
+</Content>
+</Layout>

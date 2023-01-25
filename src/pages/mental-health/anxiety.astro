@@ -1,0 +1,53 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Hero from '~/components/widgets/Hero2.astro';
+import Content from '~/components/widgets/Content.astro';
+
+const meta = {
+  title: "Anxiety",
+};
+---
+
+<Layout {meta}>
+  <Hero
+      image={{ src: import('~/assets/images/anxiety/anxiety.webp'), alt: 'Anxiety Image' }}>
+    <Fragment slot="title">
+      Find your <span class="text-accent dark:text-white highlight">calm</span> in the <span class="text-accent dark:text-white highlight"> chaos.</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      <span class="hidden sm:inline">
+        <span class="text-accent dark:text-white highlight font-bold">Anxiety</span> is a feeling of worry, nervousness, or unease about something with an uncertain outcome. It's a normal and often healthy emotion, but it can become overwhelming or excessive and can interfere with a person's daily life. <span class="text-accent dark:text-white highlight font-bold">Anxiety</span> can manifest in different ways, such as physical symptoms like increased heart rate and sweating, or mental symptoms like racing thoughts and difficulty concentrating. There are different types of anxiety disorders, each with its own set of symptoms. Anxiety can be treated with therapy, medication, or a combination of both.
+        </span>
+    </Fragment>
+  </Hero>
+
+  <Content
+  isReversed
+  items={[
+    {
+      title: 'Recognize and acknowledge your anxiety',
+      description:
+        'Understand that feeling anxious is a normal human emotion and that it is not something to be ashamed of.',
+    },
+    {
+      title: 'Learn relaxation techniques',
+      description:
+        'Practice deep breathing, meditation, or yoga to help calm your mind and body.',
+    },
+    {
+      title: 'Get moving',
+      description:
+        'Regular physical exercise can help reduce feelings of anxiety and improve overall well-being.',
+    },
+  ]}
+      image={{
+        src: import('~/assets/images/anxiety/coping.webp'),
+        alt: 'Colorful Image',
+      }}
+>
+  <Fragment slot="content">
+    <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">How to overcome it?</h3>
+  </Fragment>
+</Content>
+</Layout>
